@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 from decouple import config
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+#Directory principal of project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -26,12 +26,16 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-
+#Com o migrate o Django vai reconhecer q tem que criar essas tabelas no banco
 INSTALLED_APPS = [
+    #My App Principal
+    'src.apps.core',
+
+    #Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -76,8 +80,13 @@ WSGI_APPLICATION = 'src.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', #Padrão
+        'NAME': config('DB_NAME'),  #Nome do seu banco
+        'CONN_MAX_AGE': 60, #Para setar a persistência de conexão para 60seg
+        'USER': config('DB_USER'), #Seu usuário
+        'PASSWORD': config('DB_PASSWORD'), #Sua senha
+        'HOST': config('DB_HOST'), #inet end
+        'PORT': '', # 8000 is default #Nem precisa pôr a porta, rodará na 8000 (para testes)
     }
 }
 
