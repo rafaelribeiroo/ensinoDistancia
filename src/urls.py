@@ -20,6 +20,7 @@ from django.contrib import admin
 from src.apps.core import views
 
 urlpatterns = [
+	#R: indica que a string vai ser uma expressão regular, então caso tenha \n (que no .py significa quebra de linha, vai significar outra coisa, com base no REGEX)
     url(r'^admin/', admin.site.urls),
-    url(r'^$', views.home, name='homepage')
+    url(r'^', views.home, name='homepage')
 ]
