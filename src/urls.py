@@ -22,5 +22,5 @@ from django.contrib import admin
 urlpatterns = [
 	#R: indica que a string vai ser uma expressão regular, então caso tenha \n (que no .py significa quebra de linha, vai significar outra coisa, com base no REGEX)
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('src.apps.core.urls'))
+    url(r'^', include('src.apps.core.urls', namespace='core'))
 ]
