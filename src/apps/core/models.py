@@ -1,3 +1,4 @@
 from django.db import models
 
-# Create your models here.
+# As classes irão simular nossas tabelas devido a ORM do Django nativa
+
