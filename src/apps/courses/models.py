@@ -5,7 +5,7 @@ from django.db import models
 class Course(models.Model):
     # Ele gera a tabela como 1º parâmetro app_model (all in lowercase)
     name = models.CharField('Nome', max_length=100, unique=True)
-    slug = models.SlugField('Atalho')
+    slug = models.SlugField('Atalho', primary_key=True)
     description = models.TextField('Descrição', blank=True)
     start_date = models.DateField(
         'Data de Início',

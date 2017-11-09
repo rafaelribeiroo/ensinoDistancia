@@ -83,13 +83,15 @@ WSGI_APPLICATION = 'src.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', #Padrão
-        'NAME': config('DB_NAME'),  #Nome do seu banco
-        'CONN_MAX_AGE': 60, #Para setar a persistência de conexão para 60seg
-        'USER': config('DB_USER'), #Seu usuário
-        'PASSWORD': config('DB_PASSWORD'), #Sua senha
-        'HOST': config('DB_HOST'), #inet end
-        'PORT': '', # 8000 is default #Nem precisa pôr a porta, rodará na 8000 (para testes)
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Padrão
+        'NAME': config('DB_NAME'),  # Nome do seu banco
+        'CONN_MAX_AGE': 60,  # Para setar a persistência de conexão para 60seg
+        'USER': config('DB_USER'),  # Seu usuário
+        'PASSWORD': config('DB_PASSWORD'),  # Sua senha
+        'HOST': config('DB_HOST'),  # inet end
+        # 8000 is default #Nem precisa pôr a porta, rodará na 8000
+        # (para testes)
+        'PORT': '',
     }
 }
 
@@ -132,4 +134,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'ensinoDistancia', 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'src', 'media')
