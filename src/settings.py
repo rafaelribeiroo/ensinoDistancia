@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 import os
 from decouple import config
 
-#Directory principal of project
+# Directory principal of project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -30,12 +30,12 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-#Com o migrate o Django vai reconhecer q tem que criar essas tabelas no banco
+# Com o migrate o Django vai reconhecer q tem que criar essas tabelas no banco
 INSTALLED_APPS = [
-    #My App Principal
+    # My App Principal
     'src.apps.core',
 
-    #Django Apps
+    # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #My Apps
+    # My Apps
     'src.apps.courses'
 ]
 
