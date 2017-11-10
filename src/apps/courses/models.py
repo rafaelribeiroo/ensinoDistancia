@@ -6,7 +6,8 @@ class CourseManager(models.Manager):
     # Filtro no banco
     def search(self, query):
         return self.get_queryset().filter(
-            name__icontains=query, description__icontains=query
+            models.Q(name__icontains=query) | \
+            models.Q(description__icontains=query)
         )  # Catch queryset and after returns all objects
 
 
