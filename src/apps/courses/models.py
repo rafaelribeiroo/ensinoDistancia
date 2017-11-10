@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Q
 
 
 class CourseManager(models.Manager):
@@ -6,8 +7,7 @@ class CourseManager(models.Manager):
     # Filtro no banco
     def search(self, query):
         return self.get_queryset().filter(
-            models.Q(name__icontains=query) | \
-            models.Q(description__icontains=query)
+            Q(name__icontains=query) | Q(description__icontains=query)
         )  # Catch queryset and after returns all objects
 
 
