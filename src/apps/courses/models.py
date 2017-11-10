@@ -1,6 +1,15 @@
 from django.db import models
 
 
+class CourseManager(models.Manager):
+
+    # Filtro no banco
+    def search(self, query):
+        return self.get_queryset().filter(
+            name__icontains=query, description__icontains=query
+        )  # Catch queryset and after returns all objects
+
+
 # Nossas classes irão simular nossas tabelas do DB
 class Course(models.Model):
     # Ele gera a tabela como 1º parâmetro app_model (all in lowercase)
@@ -21,6 +30,8 @@ class Course(models.Model):
     updated_at = models.DateTimeField(
         'Atualizado em',
         auto_now=True)  # Relativo, sempre muda de acordo com alterações
+
+    objects = CourseManager()
 
     class Meta:
         ordering = ['name']
