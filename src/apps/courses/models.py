@@ -36,8 +36,8 @@ class Course(models.Model):
 
     class Meta:
         ordering = ['name']
-        verbose_name = "curso"
-        verbose_name_plural = "cursos"
+        verbose_name = "Curso"
+        verbose_name_plural = "Cursos"
 
     def __str__(self):
         return self.name

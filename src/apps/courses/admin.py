@@ -4,4 +4,5 @@ from .models import Course
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'slug', 'start_date', 'created_at']
+    search_fields = ['name', 'slug']
