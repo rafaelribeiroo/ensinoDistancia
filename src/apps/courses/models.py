@@ -16,7 +16,8 @@ class Course(models.Model):
     # Ele gera a tabela como 1º parâmetro app_model (all in lowercase)
     name = models.CharField('Nome', max_length=100, unique=True)
     slug = models.SlugField('Atalho', primary_key=True)
-    description = models.TextField('Descrição', blank=True)
+    description = models.TextField('Descrição simples', blank=True)
+    about = models.TextField('Sobre o Curso', blank=True)
     start_date = models.DateField(
         'Data de Início',
         null=True,  # A nível de banco de dados, ele pode ser nullable
