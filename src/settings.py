@@ -16,7 +16,6 @@ from decouple import config
 # Directory principal of project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
@@ -34,7 +33,8 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     # My App Principal
     'src.apps.core',
-
+    # My Apps
+    'src.apps.courses',
     # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -42,9 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    # My Apps
-    'src.apps.courses',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +59,7 @@ ROOT_URLCONF = 'src.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['src/apps/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

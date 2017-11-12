@@ -27,7 +27,7 @@ urlpatterns = [
     # Porque definir um namespace para um include de URL?
     # Caso eu tenha dois namespaces iguais, definirei cada um pelo nome do include antes, exemplo> core:home
     url(r'^', include('src.apps.core.urls', namespace='core')),
-    url(r'^curso[s/]', include('src.apps.courses.urls', namespace='courses')),
+    url(r'^curso[s]/', include('src.apps.courses.urls', namespace='courses')),
 ]
 
 if settings.DEBUG:

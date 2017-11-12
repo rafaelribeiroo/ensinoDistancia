@@ -24,4 +24,4 @@ def details(request, slug, template_name='details.html'):
     context = {
         'course': course
     }
-    return render(request, context, template_name)
+    return render(request, template_name, context)
