@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My Apps
-    'src.apps.courses'
+    'src.apps.courses',
 ]
 
 MIDDLEWARE = [
