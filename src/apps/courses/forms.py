@@ -12,9 +12,9 @@ class ContactCourse(forms.Form):
         label='Mensagem/Dúvida', widget=forms.Textarea
     )
 
-    def send_mail(self, course, name, email, message):
-        subject = f'_{course}_ Contato'
-        message = f'Nome: {name}', 'E-mail: {email}', 'Message: {message}')
+    def send_mail(self, course):
+        subject = '[%s] Contato' % course
+        message = 'Nome: %(name)s;Email: %(email)s;%(message)s'
         context = {
             'name': self.cleaned_data['name'],
             'email': self.cleaned_data['email'],

@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from decouple import config
-#Defina todas as constantes aqui no settings, que depois você pode usá-las de uma forma mais enxuta
+# Defina todas as constantes aqui no settings, que depois você pode usá-las de uma forma mais enxuta
 
 # Directory principal of project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
