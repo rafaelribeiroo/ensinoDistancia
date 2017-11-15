@@ -1,4 +1,9 @@
 from django import forms
+from django.core.mail import send_mail
+from django.conf import settings
+from django.utils.translation import ugettext as _
+# Never import settings, porque só importo o settings.py, no from eu
+# importo aquele arquivo inclusive os settings do DJANGO
 
 
 class ContactCourse(forms.Form):
@@ -7,3 +12,17 @@ class ContactCourse(forms.Form):
     message = forms.CharField(
         label='Mensagem/Dúvida', widget=forms.Textarea
     )
+
+    def send_mail(self, course, name, email, message):
+        subject = _('{} Contato'.format(course))
+        message = _('Nome: {}', 'E-mail: {}', 'Message: {}'.format(name, email, message))
+        context = {
+            'name': self.cleaned_data['name'],
+            'email': self.cleaned_data['email'],
+            'message': self.cleaned_data['message'],
+        }
+        message = message % context
+        send_mail(
+            subject, message, settings.DEFAULT_FROM_EMAIL,
+            [settings.CONTACT_EMAIL]
+        )

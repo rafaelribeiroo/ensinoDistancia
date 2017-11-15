@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from decouple import config
+#Defina todas as constantes aqui no settings, que depois você pode usá-las de uma forma mais enxuta
 
 # Directory principal of project
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -143,3 +144,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = config('EMAIL_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 EMAIL_PORT = 587
+
+# Minhas configurações de email acima enviarão EMAIL pro user abaixo
+CONTACT_EMAIL = 'pereiraribeirorafaelprogrammer@outlook.com'

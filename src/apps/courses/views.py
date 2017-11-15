@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 
 from .models import Course
 from .forms import ContactCourse
-
+# Boas práticas: Deixar a view com menos lógica possíve, mantenha seus métodos e regras de negócio em módulos separados (Deixar ela enxuta)
 
 def index(request, template_name='courses.html'):
     courses = Course.objects.all()
@@ -30,6 +30,7 @@ def details(request, slug, template_name='details.html'):
             context['is_valid'] = True
             print(form.cleaned_data)
             # print(form.cleaned_data['name'])
+            form.send_mail(course)
             form = ContactCourse()
     else:
         form = ContactCourse()
