@@ -136,8 +136,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'src', 'media')
 
 # E-mails
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'Rafael Ribeiro <pereiraribeirorafael@gmail.com>'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
@@ -146,4 +146,4 @@ EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 EMAIL_PORT = 587
 
 # Minhas configurações de email acima enviarão EMAIL pro user abaixo
-CONTACT_EMAIL = 'pereiraribeirorafaelprogrammer@outlook.com'
+CONTACT_EMAIL = 'pereiraribeirorafael@gmail.com'
