@@ -34,8 +34,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     # My App Principal
     'src.apps.core',
-    # My Apps
-    'src.apps.courses',
+
     # Django Apps
     'django.contrib.admin',
     'django.contrib.auth',
@@ -43,6 +42,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # My Apps
+    'src.apps.courses',
+    'src.apps.accounts',
 ]
 
 MIDDLEWARE = [
