@@ -150,3 +150,9 @@ EMAIL_PORT = 587
 
 # Minhas configurações de email acima enviarão EMAIL pro user abaixo
 CONTACT_EMAIL = 'pereiraribeirorafael@gmail.com'
+
+#Auth
+# Ou apenas '/conta/entrar'
+LOGIN_URL = '/conta/entrar/'
+# Quando o Django loga corretamente volta pra homepage
+LOGIN_REDIRECT_URL = '/'
