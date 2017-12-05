@@ -153,6 +153,6 @@ CONTACT_EMAIL = 'pereiraribeirorafael@gmail.com'
 
 #Auth
 # Ou apenas '/conta/entrar'
-LOGIN_URL = '/conta/entrar/'
+LOGIN_URL = 'accounts:login'
 # Quando o Django loga corretamente volta pra homepage
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'core:homepage'
