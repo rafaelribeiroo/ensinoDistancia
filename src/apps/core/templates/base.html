@@ -19,16 +19,16 @@
 				{% url 'courses:index' as courses_index %}
 				{% url 'accounts:login' as login %}
 				{% url 'core:contact' as contact %}
-	            <li {% if request.path == home %} class="active"{%endif%}>
+	            <li {% if request.path == home %} class="pure-menu-selected"{%endif%}>
 	                <a href="{% url 'core:homepage' %}">Início</a>
 	            </li>
-	            <li {% if request.path == courses_index %} class="active"{%endif%}>
+	            <li {% if request.path == courses_index %} class="pure-menu-selected"{%endif%}>
 	            	<a href="{% url 'courses:index' %}">Cursos</a>
 		        </li>
-	             <li {% if request.path == login %} class="active"{%endif%}>
+	             <li {% if request.path == login %} class="pure-menu-selected"{%endif%}>
 	            	<a href="{% url 'accounts:login' %}">Entrar</a>
 		        </li>
-	            <li {% if request.path == contact %} class="active"{%endif%}>
+	            <li {% if request.path == contact %} class="pure-menu-selected"{%endif%}>
 	            	<a href="{% url 'core:contact' %}">Contato</a>
 		        </li>
 	        </ul>
