@@ -1,5 +1,6 @@
 clean:
-	find . -name "*.pyc" -exec rm -rf {} \;
+	find . -type d -name '__pycache__' -prune -exec rm -rf {} \;
+	find . -name "*.pyc" -exec rm -rf {} \;i
 
 run:
 	python manage.py runserver 0.0.0.0:8000
