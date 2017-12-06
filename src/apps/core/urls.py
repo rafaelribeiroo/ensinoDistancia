@@ -6,6 +6,6 @@ from .views import (
 
 app_name = 'core'
 urlpatterns = [
-    path(r'', home, name='homepage'),
-    path(r'contato', contact, name='contact'),
+    path('', home, name='homepage'),
+    path('contato', contact, name='contact'),
 ]
