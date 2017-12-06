@@ -1,9 +1,9 @@
-from django.conf.urls import url  # include
+from django.urls import path
 from django.contrib.auth.views import LoginView  # , LogoutView
 # from django.contrib.auth import views as auth_views
 
-
+app_name = 'accounts'
 urlpatterns = [
-    url(r'^entrar/$', LoginView.as_view(
+    path(r'entrar/', LoginView.as_view(
         template_name='login.html'), name='login'),
 ]

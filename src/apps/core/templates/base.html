@@ -15,10 +15,22 @@
 	    <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
 	        <a class="pure-menu-heading" href="">SIMPLE MOOC</a>
 	        <ul>
-	            <li class="pure-menu-selected"><a href="{% url 'core:homepage' %}">Início</a></li>
-	            <li><a href="{% url 'courses:index' %}">Cursos</a></li>
-	            <li><a href="{% url 'accounts:login' %}">Entrar</a></li>
-	            <li><a href="{% url 'core:contact' %}">Contato</a></li>
+				{% url 'core:homepage' as home %}
+				{% url 'courses:index' as courses_index %}
+				{% url 'accounts:login' as login %}
+				{% url 'core:contact' as contact %}
+	            <li {% if request.path == home %} class="active"{%endif%}>
+	                <a href="{% url 'core:homepage' %}">Início</a>
+	            </li>
+	            <li {% if request.path == courses_index %} class="active"{%endif%}>
+	            	<a href="{% url 'courses:index' %}">Cursos</a>
+		        </li>
+	             <li {% if request.path == login %} class="active"{%endif%}>
+	            	<a href="{% url 'accounts:login' %}">Entrar</a>
+		        </li>
+	            <li {% if request.path == contact %} class="active"{%endif%}>
+	            	<a href="{% url 'core:contact' %}">Contato</a>
+		        </li>
 	        </ul>
 	    </div>
 	</div>

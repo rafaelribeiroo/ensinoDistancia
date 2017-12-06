@@ -1,12 +1,13 @@
-from django.conf.urls import url
+from django.urls import path
 from .views import (
     index,
     details,
 )
 
+app_name = 'courses'
 urlpatterns = [
-    url(r'^$', index, name='index'),
+    path(r'', index, name='index'),
     # Get the parameter of primary key and after, only a digit number
-    # url(r'^(?P<pk>\d+)/$', details, name='details'),
-    url(r'^(?P<slug>[\w_-]+)/$', details, name='details'),
+    # path(r'^(?P<pk>\d+)/$', details, name='details'),
+    path(r'<str:slug>/', details, name='details'),
 ]

@@ -1,11 +1,11 @@
-from django.conf.urls import url
+from django.urls import path
 from .views import (
     home,
     contact,
 )
 
-
+app_name = 'core'
 urlpatterns = [
-    url(r'^$', home, name='homepage'),
-    url(r'^contato[s/]$', contact, name='contact'),
+    path(r'', home, name='homepage'),
+    path(r'contato', contact, name='contact'),
 ]
