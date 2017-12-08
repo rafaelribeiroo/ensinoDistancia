@@ -32,6 +32,9 @@
 	            	<a href="{% url 'core:contact' %}">Contato</a>
 		        </li>
 	        </ul>
+			{% if request.user.is_authenticated %}
+				<span style="float: right">Olá, {{ request.user }}!</span>
+			{% endif %}
 	    </div>
 	</div>
 	<div class="content">
