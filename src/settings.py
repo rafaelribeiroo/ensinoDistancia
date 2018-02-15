@@ -16,7 +16,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=True, cast=bool)
 
 # Diretiva: Isso define uma lista de nomes e domínios que podem ser usados para ser conectados em instância do Django, o Django requer que você defina isso para evitar uma vulnerabilidade de segurança.
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 # São as apps nativas do Django, você pode utilizá-las ou não
 INSTALLED_APPS = [
