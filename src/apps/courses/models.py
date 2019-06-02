@@ -35,7 +35,6 @@ class Course(models.Model):
 
     objects = CourseManager()
 
-    @models.permalink
     def get_absolute_url(self):
         # from django.core.urlresolvers import reverse
         return ('courses:details', {}, {'slug': self.slug})
